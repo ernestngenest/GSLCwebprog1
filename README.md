@@ -9,6 +9,7 @@ composer update
 
 php artisan migrate 
 
+lalu buat data dummy dengan seeder 
 php artisan db:seed 
 
 php artisan serve 
