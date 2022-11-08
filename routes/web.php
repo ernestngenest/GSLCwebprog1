@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
@@ -15,37 +16,23 @@ use App\Models\Listing;
 |
 */
 
-Route::get('/', function () {
-    return view('listings',[
-        'Heading' => 'Leatest Listings',
-        'listings' => Listing::data()
-    ]);
-});
+Route::get('/', [ListingController::class,'index'])->name('main_home');
 
+Route::get('/listings/create', [ListingController::class,'create'])->name('create_index');
 
-Route::get('listings/{listing}', function (Listing $listing) {
+Route::post('/listings', [ListingController::class,'store'])->name('main_home');
 
-    if ($listing){
-        return view ('listing' ,['listing' => $listing]);
-    }
-    else {
-        abort('404');
-    }
-});
+Route::get('listings/{listing}', [ListingController::class,'show'])->name('listing');
+//route model binding harus ditaro di paling bawah 
 
 
 
-Route::get('/hello',function () {
-    return response('hello')
-    -> header('content-type', 'text/plain');
-});
+//common Resource routes itu ada 
 
-
-Route::get('/posts/{id}',function ($id) {
-    ddd($id);
-    return response('post',$id)->where('id', '[0-9]+');
-});
-
-Route::get('/search',function(Request $request){
-    return $request->name . " " . $request->city;
-});
+//index - show all listings
+//show - show single listing
+//create -show form to create new listing 
+//store - Store new listing
+//edit -  show form to edit listing 
+//update - update listing 
+//destroy - delete listing 
