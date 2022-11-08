@@ -25,6 +25,9 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="company"
                 />
+                @error('company')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -37,6 +40,9 @@
                     name="title"
                     placeholder="Example: Senior Laravel Developer"
                 />
+                @error('title')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
             </div>
 
             <div class="mb-6">
@@ -51,6 +57,9 @@
                     name="location"
                     placeholder="Example: Remote, Boston MA, etc"
                 />
+                @error('location')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -62,6 +71,9 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="email"
                 />
+                @error('email')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -76,6 +88,9 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="website"
                 />
+                @error('website')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -88,6 +103,9 @@
                     name="tags"
                     placeholder="Example: Laravel, Backend, Postgres, etc"
                 />
+                @error('tags')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -99,6 +117,9 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="logo"
                 />
+                @error('logo')
+                    <span class="text-red-500">{{ $message }}</span>
+                 @enderror
             </div>
 
             <div class="mb-6">
@@ -114,6 +135,9 @@
                     rows="10"
                     placeholder="Include tasks, requirements, salary, etc"
                 ></textarea>
+                @error('description')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="mb-6">
