@@ -32,5 +32,8 @@ class ListingController extends Controller
     // function store
     public function store(Request $request){
         dd($request->all());
+        $formfields = $request->validate([
+            
+        ]);
     }
 }
