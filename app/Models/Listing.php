@@ -13,6 +13,8 @@ class Listing extends Model
     //     return Listing::all();
     // }
 
+    protected $fillable = ['title','tags','company','location', 'email' ,'website','description'];
+
     public static function find($id){
         $listings = self::all();
 

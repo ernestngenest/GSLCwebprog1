@@ -38,11 +38,14 @@ class ListingController extends Controller
             'title' =>  'required',
             'company' => ['required', Rule::unique('listings' , 'company')],
             'location' => ['required'],
+            'website' => ['required'],
             'email' => ['required','email'],
             'tags' => 'required' ,
             'description' => 'required' ,
         ]);
 
-        return redirect('/');
+        Listing::create($formfields);
+
+        return redirect('/')->with('message' , 'berhasil menambahkan list');
     }
 }
